@@ -1,0 +1,225 @@
+//
+.book {
+  @include flexyColumn;
+  margin-top: 10rem;
+  padding: 0 20rem;
+  width: 100%;
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    margin-bottom: 5rem;
+  }
+  &__card {
+    height: 60vh;
+    width: 35rem;
+    position: relative;
+    perspective: 1500px;
+
+    &:hover .book__front {
+      transform: rotateY(180deg);
+    }
+    &:hover .book__back {
+      transform: rotateY(0deg);
+    }
+  }
+  &__front {
+    height: 100%;
+    width: 100%;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0.3rem 0.5rem 2rem rgba(0, 0, 0, 0.25);
+    transition: all 1s ease;
+  }
+  &__back {
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    @include flexyColumn;
+    box-shadow: 0.3rem 0.5rem 2rem rgba(0, 0, 0, 0.25);
+    transition: all 1s ease;
+  }
+
+  // book__colors--back
+  &__orange--back {
+    background-image: linear-gradient(
+      115deg,
+      $primary-orange-light,
+      $primary-orange-dark
+    );
+  }
+  &__green--back {
+    background-image: linear-gradient(
+      115deg,
+      $primary-green-light,
+      $primary-green-dark
+    );
+  }
+  &__blue--back {
+    background-image: linear-gradient(
+      115deg,
+      $primary-blue-light,
+      $primary-blue-dark
+    );
+  }
+
+  //////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////
+
+  // book__front-imgs
+  &__front-img-orange {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($primary-orange-light, 0.6),
+        rgba($primary-orange-dark, 0.6)
+      ),
+      url("../../assets/img/nat-5.jpg");
+  }
+  &__front-img-green {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($primary-green-light, 0.6),
+        rgba($primary-green-dark, 0.6)
+      ),
+      url("../../assets/img/nat-6.jpg");
+  }
+  &__front-img-blue {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($primary-blue-light, 0.6),
+        rgba($primary-blue-dark, 0.6)
+      ),
+      url("../../assets/img/nat-7.jpg");
+  }
+
+  //////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////
+
+  &__front-img {
+    width: 100%;
+    height: 25rem;
+
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  }
+  &__card--heading {
+    position: absolute;
+    top: 28%;
+    right: 2rem;
+    font-size: 3rem;
+    color: $white-color;
+    text-align: right;
+    letter-spacing: 0.2rem;
+  }
+
+  // heading-spans
+  .heading-span-01--orange {
+    padding: 0 0.5rem;
+    background-image: linear-gradient(
+      45deg,
+      rgba($primary-orange-light, 0.8),
+      rgba($primary-orange-dark, 0.8)
+    );
+  }
+  .heading-span-02--orange {
+    padding: 0 0.5rem 0 1rem;
+    background-image: linear-gradient(
+      45deg,
+      rgba($primary-orange-light, 0.9),
+      rgba($primary-orange-dark, 1)
+    );
+  }
+  .heading-span-01--green {
+    padding: 0 0.5rem;
+    background-image: linear-gradient(
+      45deg,
+      rgba($primary-green-light, 0.8),
+      rgba($primary-green-dark, 0.8)
+    );
+  }
+  .heading-span-02--green {
+    padding: 0 0.5rem 0 1rem;
+    background-image: linear-gradient(
+      45deg,
+      rgba($primary-green-light, 0.9),
+      rgba($primary-green-dark, 1)
+    );
+  }
+  .heading-span-01--blue {
+    padding: 0 0.5rem;
+    background-image: linear-gradient(
+      45deg,
+      rgba($primary-blue-light, 0.8),
+      rgba($primary-blue-dark, 0.8)
+    );
+  }
+  .heading-span-02--blue {
+    padding: 0 0.5rem 0 1rem;
+    background-image: linear-gradient(
+      45deg,
+      rgba($primary-blue-light, 0.9),
+      rgba($primary-blue-dark, 1)
+    );
+  }
+
+  //////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////
+
+  &__list {
+    list-style: none;
+    padding: 2rem 0;
+
+    li {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $grey-02;
+      text-align: center;
+      padding: 1.2rem 0;
+      width: 20rem;
+
+      &:not(:last-child) {
+        border-bottom: rgba($grey-02, 0.15) 1px solid;
+      }
+    }
+  }
+  &__price-label {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $white-color;
+  }
+  &__price {
+    color: $white-color;
+    font-size: 6rem;
+    font-weight: 200;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.book__card-btn {
+  @include btns($grey-02, $white-color, $white-color, $white-color);
+}
+.book__btn {
+  @include btns(
+    $white-color,
+    $primary-green-light,
+    $primary-green-dark,
+    $primary-green-light
+  );
+}

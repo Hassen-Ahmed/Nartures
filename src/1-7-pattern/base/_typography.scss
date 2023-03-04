@@ -1,0 +1,23 @@
+// importing _scss files
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+//
+.heading {
+  background-image: linear-gradient(
+    to right,
+    rgba($primary-green-light, 0.6),
+    rgba($primary-green-dark, 0.7)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 10rem;
+  margin-top: 5rem;
+  font-size: 2rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: skewX(5deg) skewY(4deg);
+    text-shadow: 0.2rem 0.3rem 2rem rgba(0, 0, 0, 0.15);
+  }
+}

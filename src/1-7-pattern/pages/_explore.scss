@@ -1,0 +1,61 @@
+//
+
+.explore__container {
+  transform: skewY(-7deg);
+  margin-top: -2rem;
+  @include bgOf(
+    $primary-green-light,
+    $primary-green-dark,
+    "../../assets/img/nat-4.jpg"
+  );
+}
+.explore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  padding: 0 30rem;
+
+  height: 85vh;
+  width: 100%;
+  transform: skewY(7deg);
+  position: relative;
+
+  &__card {
+    background-color: rgba($grey-01, 0.8);
+    color: $grey-04;
+    box-shadow: 0.2rem 0.4rem 2rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45%;
+    width: 25rem;
+    padding: 0rem 2rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    &:hover {
+      transform: scale(1.1) translateY(-0.4rem);
+    }
+  }
+  &__heading {
+    font-size: 2.2rem;
+    margin: 3rem 0;
+  }
+  &__paragraph {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+}
+
+.material-symbols-outlined {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  // background-color: $primary-green-dark;
+  @include bgLinearGradient;
+  font-size: 8rem;
+  font-weight: 500;
+}
