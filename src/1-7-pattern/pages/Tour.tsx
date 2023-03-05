@@ -35,6 +35,7 @@ const Tour: React.FC = () => {
               <button>Learn more &rarr;</button>
             </div>
           </div>
+
           {/* right side  */}
           <div className="tour__right">
             <div className="tour__image-container">

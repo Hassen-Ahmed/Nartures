@@ -1,0 +1,160 @@
+// strting here...
+.form {
+  @include bgLinearGradient;
+  height: 100vh;
+  width: 100%;
+  @include flexyColumn;
+  &__big-container {
+    width: 70%;
+    height: 70%;
+    position: relative;
+    overflow: hidden;
+
+    &:hover img {
+      transform: scale(1.1);
+      filter: blur(0.1rem);
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+  }
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 50%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__heading {
+    margin-left: 0rem;
+    margin-top: 8rem;
+  }
+
+  &__left {
+    width: 50%;
+    height: 100%;
+    padding-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  &__inputs {
+    margin-top: -9rem;
+  }
+  &__input {
+    width: 100%;
+    position: relative;
+
+    input {
+      display: block;
+      width: 40rem;
+      height: 5rem;
+      margin: 2rem 0;
+      margin-top: 5rem;
+      padding-left: 1.5rem;
+      font-size: 1.5rem;
+      border: none;
+      border-bottom: 0.3rem solid transparent;
+      outline-color: transparent;
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.8);
+
+      &:invalid {
+        border-bottom: 0.3rem solid rgb(239, 108, 108);
+      }
+      &:valid {
+        border-bottom: 0.3rem solid $primary-green-light;
+      }
+      &:placeholder-shown {
+        border-bottom: 0.3rem solid transparent;
+      }
+    }
+    input:not(:placeholder-shown) ~ label {
+      opacity: 1;
+      top: 6.5rem;
+    }
+    input:not(:placeholder-shown) {
+      box-shadow: 0.6rem 0.6rem 2rem rgba(0, 0, 0, 0.15);
+      background-color: white;
+    }
+    label {
+      position: absolute;
+      top: 1.55rem;
+      font-size: 1.5rem;
+      margin-left: 1.5rem;
+      color: $grey-04;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+  }
+  &__btn {
+    @include btns(
+      $white-color,
+      $primary-green-light,
+      $primary-green-dark,
+      $primary-green-light
+    );
+    padding: 1rem 4rem;
+  }
+
+  &__radio-box {
+    display: flex;
+  }
+  &__radio {
+    margin: 5rem 5rem 0 5rem;
+
+    input {
+      display: none;
+    }
+    input:checked ~ label span::after {
+      display: block;
+    }
+
+    label {
+      position: relative;
+      font-size: 1.6rem;
+      color: $grey-03;
+    }
+
+    span {
+      position: absolute;
+      top: -0.3rem;
+      left: -5rem;
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      border: 0.4rem solid $primary-green-dark;
+      border-radius: 50%;
+
+      &::after {
+        content: "";
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.3rem;
+        height: 1.3rem;
+        @include bgLinearGradient;
+        border-radius: 50%;
+      }
+    }
+  }
+}
