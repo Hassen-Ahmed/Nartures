@@ -1,0 +1,82 @@
+// starging here...
+.footer {
+  height: 70vh;
+  width: 100%;
+  background-color: rgba($grey-05, 0.96);
+  margin-top: -1.5rem;
+  padding: 10rem 20rem;
+
+  &__upper {
+    @include flexyColumn;
+    margin-bottom: 10rem;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30rem;
+    // background-color: rebeccapurple;
+  }
+
+  &__left {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__left--inner {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 81%;
+    border-top: 0.1rem solid rgba($grey-02, 1);
+    padding-top: 2rem;
+
+    h2 {
+      color: $white-color;
+      font-size: 1.5rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+
+      &:not(h2:last-child) {
+        margin-right: 1.4rem;
+      }
+
+      &:hover {
+        text-shadow: 0.3rem 0.5rem 2rem rgba(0, 0, 0, 0.99);
+        background-color: $grey-04;
+        transform: scale(1.2) rotateZ(10deg);
+        color: $primary-green-light;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  &__right {
+    flex-basis: 50%;
+    color: $white-color;
+    margin: 0 1rem;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-top: 0.1rem solid rgba($grey-02, 1);
+
+    p {
+      line-height: 2.4rem;
+    }
+  }
+
+  &__right--span {
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+
+    &:hover {
+      text-shadow: 0.3rem 0.5rem 2rem rgba(0, 0, 0, 0.99);
+      background-color: $grey-04;
+      transform: scale(1.2) rotateZ(10deg);
+      color: $primary-green-light;
+      border-radius: 1rem;
+    }
+  }
+}

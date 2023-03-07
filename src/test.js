@@ -1,18 +1,18 @@
-class MyHttp {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+// class MyHttp {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
 
-  createServer() {
-    console.log("this is createServer method");
-    return this;
-  }
+//   createServer() {
+//     console.log("this is createServer method");
+//     return this;
+//   }
 
-  listen() {
-    console.log("this is listen for :8080");
-    return this;
-  }
-}
+//   listen() {
+//     console.log("this is listen for :8080");
+//     return this;
+//   }
+// }
 
-const customHttp = new MyHttp("someOne", 99);
+exports.customHttp = { name: "someOne" };

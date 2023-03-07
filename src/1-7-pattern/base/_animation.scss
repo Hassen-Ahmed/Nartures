@@ -18,3 +18,36 @@
     transform: translateX(0rem);
   }
 }
+
+@keyframes menuBtn {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes menuListsChecked {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes menuBtnSkewX {
+  0% {
+    transform: skewX(20deg);
+  }
+  30% {
+    transform: skewX(-20deg);
+  }
+  100% {
+  }
+}

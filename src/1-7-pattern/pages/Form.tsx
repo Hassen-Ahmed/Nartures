@@ -1,6 +1,7 @@
 import React from "react";
 
 const bgPic: string = require("../../assets/img/nat-10.jpg");
+
 const Form: React.FC = () => {
   return (
     <div className="form">
