@@ -67,3 +67,26 @@
     transform: translateY(0rem);
   }
 }
+
+@mixin responsive($device) {
+  @if $device == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $device == tab-land {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $device == tab-port {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $device == big-desktop {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}

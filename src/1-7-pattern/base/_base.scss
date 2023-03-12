@@ -7,7 +7,22 @@
 }
 
 html {
-  font-size: 65.2%;
+  font-size: 65.2%; // 10px
+  @include responsive(big-desktop) {
+    font-size: 75%; // 12px
+  }
+  // current window breakPoint
+  @include responsive(tab-land) {
+    font-size: 56.25%; // 9px
+  }
+  @include responsive(tab-port) {
+    font-size: 50%; // 8px
+  }
+  @include responsive(phone) {
+    font-size: 40%; // 8px
+  }
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -16,7 +31,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   padding: 2rem;
-  padding-bottom: 0rem;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  @include flexyColumn;
+  // background-color: $grey-02;
+  @include responsive(tab-port) {
+    padding: 0;
+  }
+
+  #root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 }

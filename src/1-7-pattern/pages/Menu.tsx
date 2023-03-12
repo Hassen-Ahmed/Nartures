@@ -1,24 +1,27 @@
 import React from "react";
 
 const Menu = () => {
+  const widthHandler = async () => {
+    const menu = document.querySelector(".menu")! as HTMLDivElement;
+    const menuLists = document.querySelector(".menu__lists")! as HTMLDivElement;
+
+    menu.style.width === "100%"
+      ? (menu.style.width = "0%")
+      : (menu.style.width = "100%");
+
+    menuLists.style.display === "flex"
+      ? (menuLists.style.display = "none")
+      : (menuLists.style.display = "flex");
+  };
+
   return (
     <div className="menu">
-      <input type="checkbox" id="radio" />
-      <label htmlFor="radio">
+      <input className="menu__input" type="checkbox" id="radio" />
+      <label onClick={widthHandler} className="menu__label" htmlFor="radio">
         <div className="menu__btn">
           <span></span>
         </div>
       </label>
-      {/* <div className="menu__corner-container"> */}
-      {/* <div className="menu__btn-container"> */}
-      {/* <input className="menu__input" type="checkbox" id="radio" />
-          <label htmlFor="radio">
-            <div className="menu__btn">
-              <span></span>
-            </div>
-          </label> */}
-      {/* </div> */}
-      {/* </div> */}
       <div className="menu__bg"></div>
       <div className="menu__lists">
         {/* 01 */}
@@ -37,7 +40,7 @@ const Menu = () => {
         </div>
         {/* 03 */}
         <div className="menu__list ">
-          <div className="menu__list-bg"></div>
+          <div className="men u__list-bg"></div>
           <h1>
             03<span></span>POPULAR TOURS
           </h1>

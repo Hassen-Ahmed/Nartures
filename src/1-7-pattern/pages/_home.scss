@@ -1,22 +1,26 @@
 // start here
 .home {
-  @include flexyColumn;
   @include bgOf(
     $primary-green-light,
     $primary-green-dark,
     "../../assets/img/hero.jpg"
   );
-  height: 95vh;
+  height: 100%;
   width: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   position: relative;
+  @include flexyColumn;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+  @include responsive(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
 
   &-logo {
     position: absolute;
-    top: 3rem;
-    left: 3rem;
-    width: 80px;
-    height: 40px;
+    top: 6rem;
+    left: 5rem;
+    width: 8rem;
+    height: 4rem;
 
     img {
       width: 100%;
@@ -49,4 +53,11 @@
   &__btn {
     @include btns($grey-04, $white-color, $white-color, $white-color);
   }
+
+  ///////////////////////////////
+  /// strting here...  media query
+
+  // @include responsive(tab-port) {
+  //   margin-top: -2rem;
+  // }
 }

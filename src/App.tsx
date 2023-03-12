@@ -7,17 +7,19 @@ import Form from "./1-7-pattern/pages/Form";
 import Home from "./1-7-pattern/pages/Home";
 import Menu from "./1-7-pattern/pages/Menu";
 import Tour from "./1-7-pattern/pages/Tour";
+
 const App: React.FC = () => {
   return (
     <>
-      <Menu />;
       <Home />;
+      <Menu />;
       <Tour />;
       <Explore />;
+      {/*
       <Book />;
       <Comment />;
       <Form />;
-      <Footer />;
+      <Footer />; */}
     </>
   );
 };
