@@ -1,5 +1,4 @@
-//
-
+// starting here...
 .explore__container {
   transform: skewY(-7deg);
 
@@ -9,6 +8,7 @@
     $primary-green-dark,
     "../../assets/img/nat-4.jpg"
   );
+
   @include responsive(tab-port) {
     transform: skewY(-12deg);
   }
@@ -17,7 +17,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // flex-wrap: wrap;
   gap: 6rem;
   padding: 0 30rem;
 
@@ -26,10 +25,12 @@
   transform: skewY(7deg);
   position: relative;
 
+  @include responsive(big-desktop) {
+    padding: 0 5rem;
+  }
   @include responsive(tab-land) {
     padding: 0 5rem;
   }
-
   @include responsive(tab-port) {
     transform: skewY(12deg);
     padding: 0 4rem;
@@ -86,7 +87,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  // background-color: $primary-green-dark;
   @include bgLinearGradient;
   font-size: 8rem;
   font-weight: 500;

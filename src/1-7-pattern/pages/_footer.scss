@@ -6,6 +6,21 @@
   margin-top: -1.5rem;
   padding: 10rem 20rem;
 
+  @include responsive(tab-land) {
+    padding: 10rem 8rem;
+  }
+  @include responsive(tab-port) {
+    padding: 10rem 2rem;
+  }
+  @include responsive(phone) {
+    padding: 10rem 15rem;
+    height: 65vh;
+  }
+  @include responsive(min-phone) {
+    padding: 10rem 6rem;
+    height: 70vh;
+  }
+
   &__upper {
     @include flexyColumn;
     margin-bottom: 10rem;
@@ -15,7 +30,14 @@
     justify-content: center;
     align-items: flex-start;
     gap: 30rem;
-    // background-color: rebeccapurple;
+
+    @include responsive(tab-land) {
+      gap: 2rem;
+    }
+    @include responsive(phone) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__left {
@@ -28,9 +50,17 @@
     display: flex;
     justify-content: flex-end;
 
-    width: 81%;
+    width: 68%;
     border-top: 0.1rem solid rgba($grey-02, 1);
     padding-top: 2rem;
+
+    @include responsive(tab-land) {
+      width: 88%;
+    }
+    @include responsive(phone) {
+      margin-bottom: 6rem;
+      width: 100%;
+    }
 
     h2 {
       color: $white-color;

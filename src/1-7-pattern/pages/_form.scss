@@ -4,11 +4,28 @@
   height: 100vh;
   width: 100%;
   @include flexyColumn;
+
+  @include responsive(phone) {
+    height: 70vh;
+  }
+
   &__big-container {
     width: 70%;
     height: 70%;
     position: relative;
     overflow: hidden;
+
+    @include responsive(tab-land) {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include responsive(phone) {
+      width: 90%;
+      height: 75%;
+    }
 
     &:hover img {
       transform: scale(1.1);
@@ -39,11 +56,24 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    @include responsive(tab-land) {
+      background-image: linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0.85) 100%,
+        transparent 0%
+      );
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__heading {
     margin-left: 0rem;
     margin-top: 8rem;
+    @include responsive(tab-land) {
+      margin: 0rem;
+    }
   }
 
   &__left {
@@ -54,9 +84,24 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    @include responsive(tab-land) {
+      width: 100%;
+      align-items: center;
+      padding-left: 0rem;
+      padding-top: 10rem;
+    }
+    @include responsive(phone) {
+      height: 100%;
+      padding-top: 5rem;
+      padding-left: 0rem;
+    }
   }
   &__inputs {
     margin-top: -9rem;
+    @include responsive(tab-land) {
+      margin-top: 0rem;
+    }
   }
   &__input {
     width: 100%;

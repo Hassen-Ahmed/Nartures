@@ -21,6 +21,7 @@ html {
   @include responsive(phone) {
     font-size: 40%; // 8px
   }
+
   height: 100%;
   width: 100%;
 }

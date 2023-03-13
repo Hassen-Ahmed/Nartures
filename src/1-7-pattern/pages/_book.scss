@@ -1,41 +1,70 @@
-//
+// starting here ...
 .book {
   @include flexyColumn;
   margin-top: 10rem;
-  padding: 0 20rem;
   width: 100%;
 
+  &__heading {
+    font-size: 1.5rem;
+
+    @include responsive(tab-land) {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+
   &__cards {
-    background-color: rebeccapurple;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 7rem;
     margin-bottom: 5rem;
 
-    @include responsive(phone) {
-      display: flex;
+    @include responsive(big-desktop) {
+      gap: 3rem;
+    }
+    @include responsive(tab-land) {
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 0rem;
-      // gap: 7rem;
-      // margin-bottom: 5rem;
+      gap: 15rem;
+    }
+    @include responsive(tab-port) {
+      gap: 15rem;
+    }
+    @include responsive(phone) {
+      gap: 6rem;
+    }
+    @include responsive(min-phone) {
+      gap: 8rem;
     }
   }
 
   &__card {
     min-height: 60vh;
     width: 20vw;
-    position: relative;
     perspective: 1500px;
+    position: relative;
+
+    @include responsive(big-desktop) {
+      width: 30vw;
+    }
+    @include responsive(tab-land) {
+      width: 50vw;
+    }
+    @include responsive(tab-port) {
+      width: 60vw;
+    }
     @include responsive(phone) {
       width: 80vw;
-      // min-height: 60vh;
+    }
+    @include responsive(min-phone) {
+      width: 95vw;
     }
 
     &:hover .book__front {
       transform: rotateY(180deg);
+      @include responsive(big-desktop) {
+        transform: rotateY(0deg);
+      }
     }
     &:hover .book__back {
       transform: rotateY(0deg);
@@ -54,6 +83,10 @@
     align-items: center;
     box-shadow: 0.3rem 0.5rem 2rem rgba(0, 0, 0, 0.25);
     transition: all 1s ease;
+
+    @include responsive(big-desktop) {
+      height: 90%;
+    }
   }
   &__back {
     height: 100%;
@@ -67,6 +100,22 @@
     @include flexyColumn;
     box-shadow: 0.3rem 0.5rem 2rem rgba(0, 0, 0, 0.25);
     transition: all 1s ease;
+
+    @include responsive(big-desktop) {
+      top: auto;
+      height: 45%;
+      margin-top: -6.5rem;
+      backface-visibility: visible;
+      transform: rotateY(0deg);
+      clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    @include responsive(tab-land) {
+      margin-top: -10rem;
+    }
+    @include responsive(tab-port) {
+      margin-top: -10rem;
+    }
   }
 
   // book__colors--back
@@ -126,13 +175,17 @@
 
   &__front-img {
     width: 100%;
-    height: 40rem;
+    height: 35rem;
 
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: screen;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+    @include responsive(big-desktop) {
+      height: 25rem;
+    }
   }
   &__card--heading {
     position: absolute;
@@ -142,6 +195,10 @@
     color: $white-color;
     text-align: right;
     letter-spacing: 0.2rem;
+
+    @include responsive(big-desktop) {
+      top: 25%;
+    }
   }
 
   // heading-spans
@@ -201,6 +258,14 @@
     list-style: none;
     padding: 2rem 0;
 
+    @include responsive(big-desktop) {
+      padding: 0;
+      padding-bottom: 5rem;
+    }
+    @include responsive(tab-land) {
+      padding-bottom: 7rem;
+    }
+
     li {
       font-size: 1.5rem;
       font-weight: 500;
@@ -225,6 +290,12 @@
     font-weight: 200;
     margin-top: 2rem;
     margin-bottom: 5rem;
+
+    @include responsive(big-desktop) {
+      margin-top: 0.3rem;
+      margin-bottom: 0rem;
+      font-size: 4rem;
+    }
   }
 }
 
@@ -239,5 +310,26 @@
     $primary-green-light
   );
 
-  // media query start here ...
+  margin-bottom: 5rem;
+
+  @include responsive(big-desktop) {
+    margin-top: 14rem;
+    margin-bottom: 2rem;
+  }
+  @include responsive(tab-land) {
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+  }
+  @include responsive(tab-port) {
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+  }
+  @include responsive(phone) {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  @include responsive(min-phone) {
+    margin-top: -1rem;
+    margin-bottom: 3rem;
+  }
 }

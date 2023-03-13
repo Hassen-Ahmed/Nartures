@@ -53,11 +53,4 @@
   &__btn {
     @include btns($grey-04, $white-color, $white-color, $white-color);
   }
-
-  ///////////////////////////////
-  /// strting here...  media query
-
-  // @include responsive(tab-port) {
-  //   margin-top: -2rem;
-  // }
 }

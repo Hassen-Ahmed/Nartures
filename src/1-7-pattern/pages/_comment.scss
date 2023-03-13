@@ -1,11 +1,32 @@
 // strging here...
 .comment {
   @include flexyColumn;
-  height: 110vh;
+  height: 120vh;
+  width: 100%;
+
   padding-top: 3rem;
-  margin-top: 5rem;
-  justify-content: flex-start;
   position: relative;
+
+  @include responsive(big-desktop) {
+    height: 130vh;
+  }
+  @include responsive(tab-land) {
+    height: 120vh;
+  }
+  @include responsive(phone) {
+    height: 110vh;
+  }
+  @include responsive(min-phone) {
+    height: 140vh;
+  }
+
+  &__heading {
+    text-align: center;
+
+    @include responsive(phone) {
+      font-size: 2rem;
+    }
+  }
 
   &__video {
     height: 100%;
@@ -16,6 +37,7 @@
     left: 0;
     z-index: -1;
     opacity: 0.2;
+    object-fit: cover;
   }
 
   &__container {
@@ -30,6 +52,17 @@
     transform: skewX(-20deg);
     width: 50%;
     background-color: rgba($white-color, 0.6);
+
+    @include responsive(big-desktop) {
+      width: 80%;
+    }
+    @include responsive(tab-land) {
+      width: 80%;
+    }
+    @include responsive(phone) {
+      width: 70%;
+      transform: skewX(0deg);
+    }
 
     &:hover .comment__profile-pic h2 {
       bottom: 35%;
@@ -48,6 +81,12 @@
     justify-content: center;
     align-items: flex-start;
     gap: 3rem;
+
+    @include responsive(phone) {
+      flex-direction: column;
+      align-items: center;
+      transform: skewX(0deg);
+    }
   }
   &__profile-pic {
     width: 15rem;
@@ -98,6 +137,7 @@
 
   &__btn {
     margin-top: 2rem;
+
     button {
       bottom: -5rem;
       font-size: 1.8rem;
@@ -109,6 +149,11 @@
       color: $primary-green-dark;
       cursor: pointer;
       transition: all 0.2s ease-in;
+
+      @include responsive(min-phone) {
+        bottom: -15rem;
+        transform: translateY(-5rem);
+      }
 
       &:hover {
         background-color: $primary-green-dark;

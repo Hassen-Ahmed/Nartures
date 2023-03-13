@@ -3,7 +3,7 @@ import React from "react";
 const Book = () => {
   return (
     <div className="book">
-      <div className="heading tour__heading">
+      <div className="heading book__heading">
         <h1>MOST POPULAR TOURS</h1>
       </div>
       <div className="book__cards">

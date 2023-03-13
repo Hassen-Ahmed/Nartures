@@ -15,11 +15,10 @@ const App: React.FC = () => {
       <Menu />;
       <Tour />;
       <Explore />;
-      {/*
       <Book />;
       <Comment />;
       <Form />;
-      <Footer />; */}
+      <Footer />;
     </>
   );
 };
