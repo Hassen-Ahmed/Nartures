@@ -8,10 +8,13 @@
 
 html {
   font-size: 65.2%; // 10px
+
   @include responsive(big-desktop) {
-    font-size: 75%; // 12px
+    font-size: 60%; // 10px
   }
-  // current window breakPoint
+  @media only screen and (max-width: 1500px) {
+    font-size: 55%;
+  }
   @include responsive(tab-land) {
     font-size: 56.25%; // 9px
   }

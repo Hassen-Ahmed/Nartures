@@ -50,9 +50,13 @@
     display: flex;
     justify-content: flex-end;
 
-    width: 68%;
+    width: 81%;
     border-top: 0.1rem solid rgba($grey-02, 1);
     padding-top: 2rem;
+
+    @include responsive(big-desktop) {
+      width: 100%;
+    }
 
     @include responsive(tab-land) {
       width: 88%;
@@ -67,6 +71,10 @@
       font-size: 1.5rem;
       font-weight: 400;
       transition: all 0.3s ease;
+
+      @include responsive(big-desktop) {
+        font-size: 1.4rem;
+      }
 
       &:not(h2:last-child) {
         margin-right: 1.4rem;
