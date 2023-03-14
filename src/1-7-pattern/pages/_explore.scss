@@ -12,6 +12,7 @@
   @include responsive(tab-port) {
     transform: skewY(-12deg);
   }
+  z-index: 100;
 }
 .explore {
   display: flex;
@@ -30,6 +31,9 @@
   }
   @include responsive(tab-land) {
     padding: 0 5rem;
+  }
+  @include responsive(land) {
+    min-height: 100vh;
   }
   @include responsive(tab-port) {
     transform: skewY(12deg);

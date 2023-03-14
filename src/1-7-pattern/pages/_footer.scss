@@ -12,6 +12,9 @@
   @include responsive(tab-port) {
     padding: 10rem 2rem;
   }
+  @include responsive(land) {
+    height: 90vh;
+  }
   @include responsive(phone) {
     padding: 10rem 15rem;
     height: 65vh;
@@ -33,6 +36,14 @@
 
     @include responsive(tab-land) {
       gap: 2rem;
+    }
+    @include responsive(land) {
+      // gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      // height: 20vh;
+      // padding: 0rem 6rem;
+      padding-right: 10rem;
     }
     @include responsive(phone) {
       flex-direction: column;
@@ -60,6 +71,9 @@
 
     @include responsive(tab-land) {
       width: 88%;
+    }
+    @include responsive(land) {
+      width: 60%;
     }
     @include responsive(phone) {
       margin-bottom: 6rem;

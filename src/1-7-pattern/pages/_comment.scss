@@ -150,6 +150,9 @@
       cursor: pointer;
       transition: all 0.2s ease-in;
 
+      @include responsive(land) {
+        transform: translateY(-5rem);
+      }
       @include responsive(min-phone) {
         bottom: -15rem;
         transform: translateY(-5rem);

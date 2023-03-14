@@ -69,22 +69,22 @@
     transform: scale(200);
   }
 
-  input:checked ~ label span {
+  & input:checked ~ label span {
     background-color: transparent;
   }
-  input:checked ~ label span::after {
+  & input:checked ~ label span::after {
     transform: rotate(405deg);
     top: 80%;
   }
-  input:checked ~ label span::before {
+  & input:checked ~ label span::before {
     transform: rotate(-405deg);
     top: 80%;
   }
-  input {
+  & input {
     display: none;
   }
 
-  label {
+  & label {
     width: 7rem;
     height: 7rem;
     position: fixed;

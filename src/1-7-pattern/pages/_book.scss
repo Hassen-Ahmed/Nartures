@@ -30,6 +30,9 @@
     @include responsive(tab-port) {
       gap: 15rem;
     }
+    @include responsive(land) {
+      gap: 20rem;
+    }
     @include responsive(phone) {
       gap: 6rem;
     }
@@ -322,6 +325,10 @@
   }
   @include responsive(tab-port) {
     margin-top: 8rem;
+    margin-bottom: 3rem;
+  }
+  @include responsive(land) {
+    margin-top: 15rem;
     margin-bottom: 3rem;
   }
   @include responsive(phone) {

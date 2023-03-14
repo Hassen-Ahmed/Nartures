@@ -21,7 +21,10 @@
       justify-content: center;
       align-items: center;
     }
-
+    @include responsive(land) {
+      height: 80%;
+      width: 60%;
+    }
     @include responsive(phone) {
       width: 90%;
       height: 75%;
@@ -71,6 +74,7 @@
   &__heading {
     margin-left: 0rem;
     margin-top: 8rem;
+
     @include responsive(tab-land) {
       margin: 0rem;
     }
@@ -90,6 +94,13 @@
       align-items: center;
       padding-left: 0rem;
       padding-top: 10rem;
+    }
+    @include responsive(tab-land) {
+      height: 100%;
+    }
+    @include responsive(land) {
+      height: 100%;
+      padding-top: 5rem;
     }
     @include responsive(phone) {
       height: 100%;

@@ -33,6 +33,9 @@
     color: white;
     text-align: center;
     margin-top: -10rem;
+    @include responsive(land) {
+      margin-top: -20rem;
+    }
 
     h1 {
       font-size: 6rem;

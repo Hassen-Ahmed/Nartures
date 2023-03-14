@@ -12,7 +12,10 @@
     transform: skewY(-14deg);
     margin-bottom: -7rem;
   }
-
+  @include responsive(land) {
+    margin-top: -21rem;
+    padding-top: 15rem;
+  }
   @include responsive(tab-port) {
     margin-bottom: -2rem;
   }
@@ -26,6 +29,9 @@
   @include responsive(tab-land) {
     padding: 0 8rem;
     transform: skewY(14deg);
+  }
+  @include responsive(land) {
+    padding: 0 28rem;
   }
 
   .heading {
@@ -117,6 +123,9 @@
     @include responsive(tab-port) {
       width: 80%;
     }
+    @include responsive(land) {
+      width: 100%;
+    }
 
     &-01 {
       top: 0;
@@ -125,11 +134,14 @@
         top: 5rem;
         left: -5rem;
       }
+      @include responsive(land) {
+        left: -15rem;
+      }
     }
     &-02 {
       top: 15rem;
       left: 12rem;
-      z-index: 10;
+      z-index: 1000;
       @include responsive(tab-port) {
         top: 2rem;
         left: 5rem;
@@ -143,17 +155,22 @@
         top: 0rem;
         left: 15rem;
       }
+      @include responsive(land) {
+        // top: 1rem;
+        left: 25rem;
+      }
     }
 
     img {
       object-fit: cover;
       width: 100%;
       height: 100%;
+      z-index: 1000;
     }
 
     &:hover {
-      z-index: 20;
       transform: scale(1.5) translateY(-1rem);
+      z-index: 1001;
     }
   }
 

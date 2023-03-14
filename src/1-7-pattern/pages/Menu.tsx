@@ -16,8 +16,8 @@ const Menu = () => {
 
   return (
     <div className="menu">
-      <input className="menu__input" type="checkbox" id="radio" />
-      <label onClick={widthHandler} className="menu__label" htmlFor="radio">
+      <input className="menu__input" type="checkbox" id="menuradio" />
+      <label onClick={widthHandler} className="menu__label" htmlFor="menuradio">
         <div className="menu__btn">
           <span></span>
         </div>

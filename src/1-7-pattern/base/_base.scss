@@ -18,8 +18,12 @@ html {
   @include responsive(tab-land) {
     font-size: 56.25%; // 9px
   }
+
   @include responsive(tab-port) {
     font-size: 50%; // 8px
+  }
+  @include responsive(land) {
+    font-size: 35%; // 9px
   }
   @include responsive(phone) {
     font-size: 40%; // 8px
